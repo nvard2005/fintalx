@@ -1,3 +1,16 @@
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
+
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('FintalX page loaded successfully');
     
@@ -63,3 +76,4 @@ document.addEventListener('DOMContentLoaded', () => {
         button.disabled = false;
       });
   });
+

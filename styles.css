@@ -1053,6 +1053,126 @@ width: 1800px;
   opacity: 1;
   transform: translateY(0);
 }
+.about-hero {
+  background: linear-gradient(to bottom, #0a0612, #1a092f);
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.about-hero .hero-text {
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.about-hero p {
+  max-width: 800px;
+  margin: 20px auto;
+  opacity: 0.8;
+}
+
+/* Reusable Section */
+.section {
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+  background: #0a0612;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-header .solid {
+  color: #b27cff;
+}
+
+.section-header .outlined {
+  -webkit-text-stroke: 1px #b27cff;
+  color: transparent;
+}
+
+/* Contact Top Bar */
+.contact-top-bar {
+  display: flex;
+  justify-content: space-around;
+  background: #8e2de2;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.form-card {
+  background: rgba(40, 10, 70, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 0 20px rgba(150, 60, 255, 0.3);
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+  background: transparent;
+  border: 1px solid #9b7cff;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-card textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.form-card input::placeholder,
+.form-card textarea::placeholder {
+  color: #b3a1e6;
+}
+
+.upload-field {
+  border: 1px solid #9b7cff;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+  color: #b3a1e6;
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
 
 @media (max-width: 768px) {
     .navbar {
