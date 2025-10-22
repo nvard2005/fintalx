@@ -1,16 +1,3 @@
-fetch("navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
-  });
-
-
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('FintalX page loaded successfully');
     
@@ -32,24 +19,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
- document.addEventListener("DOMContentLoaded", () => {
-    const footerImage = document.querySelector('.footer-image');
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".what-we-do .card");
 
-    if (!footerImage) return;
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            footerImage.classList.add('show');
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(footerImage);
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      // remove active from all
+      cards.forEach(c => c.classList.remove("active"));
+      // make clicked one purple
+      card.classList.add("active");
+    });
   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedDiv = document.querySelector(".foranimation");
+  const footer = document.querySelector(".footer");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animatedDiv.classList.add("active");
+          observer.unobserve(entry.target); // only once
+        }
+      });
+    },
+    { threshold: 0.3 } // trigger when 30% of footer visible
+  );
+
+  observer.observe(footer);
+});
+
+  
   (function(){
     emailjs.init("YOUR_PUBLIC_KEY"); 
   })();
